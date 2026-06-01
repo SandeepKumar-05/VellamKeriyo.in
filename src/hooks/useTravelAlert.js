@@ -80,7 +80,7 @@ export function useTravelAlert({ enabled = false, reports = [], onAlert }) {
       },
       {
         enableHighAccuracy: true,
-        maximumAge: 5000,
+        maximumAge: 0,
         timeout: 10000,
       }
     );

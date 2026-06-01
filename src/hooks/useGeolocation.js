@@ -56,7 +56,7 @@ export function useGeolocation() {
       {
         enableHighAccuracy: true,
         timeout: 10000,
-        maximumAge: 30000,
+        maximumAge: 0,
       }
     );
   }, []);
@@ -95,7 +95,7 @@ export function useGeolocation() {
       {
         enableHighAccuracy: true,
         timeout: 10000,
-        maximumAge: 5000,
+        maximumAge: 0,
       }
     );
   }, []);

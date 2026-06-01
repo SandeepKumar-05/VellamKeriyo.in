@@ -6,6 +6,7 @@ import { useSession } from '../../hooks/useSession';
 import { usePushAlert } from '../../hooks/usePushAlert';
 import { useToast } from '../../hooks/useToast';
 import LocationAutocomplete from '../ui/LocationAutocomplete';
+import LocationDetect from '../report/LocationDetect';
 import SectionHeading from '../ui/SectionHeading';
 import './RouteAlert.css';
 
@@ -112,12 +113,21 @@ export default function RouteAlert({ onRouteCalculated }) {
           <label className="route-alert__label">
             ഉറവിടം <span className="route-alert__label-en">(Origin)</span>
           </label>
-          <LocationAutocomplete
-            placeholder="ഉറവിടം തിരയുക (Search origin)"
-            onSelect={setOrigin}
-            value={origin}
-            id="route-origin"
-          />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+            <LocationDetect onDetect={(loc) => setOrigin({
+              lat: loc.lat,
+              lng: loc.lng,
+              displayName: loc.placeName,
+              district: loc.district,
+            })} />
+            <div style={{ textAlign: 'center', fontSize: '0.85rem', color: '#7f8c8d' }}>അല്ലെങ്കിൽ തിരയുക (Or search)</div>
+            <LocationAutocomplete
+              placeholder="ഉറവിടം തിരയുക (Search origin)"
+              onSelect={setOrigin}
+              value={origin}
+              id="route-origin"
+            />
+          </div>
         </div>
 
         <div className="route-alert__field">
