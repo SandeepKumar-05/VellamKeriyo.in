@@ -1,4 +1,4 @@
-# 🌊 വെള്ളം കേറിയോ? (Vellam Keriyo?)
+# 🌊 safeAnno.in
 
 **Real-time community disaster alert system for Kerala, India.**
 
